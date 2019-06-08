@@ -1,0 +1,53 @@
+{
+  "engines": {
+    "composer": "^0.19.20"
+  },
+  "name": "studentverification-network",
+  "version": "0.0.1",
+  "description": "network of student assets",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/studentverification-network.bna",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "nyc mocha -t 0 test/*.js && cucumber-js"
+  },
+  "keywords": [
+    "composer",
+    "composer-network"
+  ],
+  "author": "Aadish Deshpande",
+  "email": "aadish.deshpande@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "^0.19.20",
+    "composer-cli": "^0.19.20",
+    "composer-client": "^0.19.20",
+    "composer-common": "^0.19.20",
+    "composer-connector-embedded": "^0.19.20",
+    "composer-cucumber-steps": "^0.19.20",
+    "chai": "latest",
+    "chai-as-promised": "latest",
+    "cucumber": "^2.2.0",
+    "eslint": "latest",
+    "nyc": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.14.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "firebase": "^5.9.4",
+    "multer": "^1.4.1",
+    "nodemailer": "^6.1.0",
+    "path": "^0.12.7",
+    "pdfshift": "^1.0.4",
+    "querystring": "^0.2.0",
+    "req-flash": "0.0.3",
+    "request": "^2.88.0",
+    "save": "^2.3.3",
+    "sendotp": "^1.2.9",
+    "sha256": "^0.2.0"
+  }
+}
